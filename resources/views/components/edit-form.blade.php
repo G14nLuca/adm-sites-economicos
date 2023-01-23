@@ -55,7 +55,7 @@
 
                                     <div class="form-group my-2">
                                         <label for="imgPrincipalInput">Imagem Principal</label>
-                                        <input type="file" class="form-control-file" id="imgPrincipalInput" name="imgPrimcipal">
+                                        <input type="file" class="form-control-file" id="imgPrincipalInput" name="imgPrincipal">
                                     </div>
 
                                 </div>
