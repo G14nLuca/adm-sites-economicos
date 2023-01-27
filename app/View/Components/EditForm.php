@@ -24,6 +24,6 @@ class EditForm extends Component
      */
     public function render()
     {
-        return view('components.edit-form');
+        return view('components.about-section.edit-form');
     }
 }
