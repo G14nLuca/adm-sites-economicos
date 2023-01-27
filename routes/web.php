@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AboutController;
+use App\Http\Controllers\api\AboutController;
 use App\Http\Controllers\MainController;
 
 /*
@@ -16,5 +16,4 @@ use App\Http\Controllers\MainController;
 */
 
 Route::get('/', [MainController::class, "index"]);
-Route::get('/about', [AboutController::class, "index" ]);
-Route::post('/about/save', [AboutController::class, "store"]);
+Route::get('/about', [AboutController::class, "index"]);
