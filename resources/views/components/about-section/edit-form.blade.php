@@ -1,3 +1,5 @@
+<script src="../js/about/autosave.js"></script>
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <div>
     <div class="page-inner" style="margin-bottom: 0;">
         <div class="page-header">
@@ -28,34 +30,36 @@
                 <div class="card">
 
                     <div class="card-body" style="background-color: #dcdede;">
-                        <form action="/about/save" method="POST" id="edit-form" enctype="multipart/form-data">
+                        <form enctype="multipart/form-data">
                             <div class="row">
 
                                 <div class="col-md-6 col-lg-4">
-                                    @csrf
                                     <div class="form-group my-2">
                                         <label for="nomeInput">Nome da seção</label>
-                                        <input type="text" class="form-control" id="nomeInput" placeholder="Digite o nome da seção aqui" name="nome" value="{{$fields->nome}}">
+                                        <input type="text" class="form-control" id="nomeInput" placeholder="Digite o nome da seção aqui" name="nome" value="{{$fields->nome}}" onfocus="focusText(this)" onfocusout="autosaveText(this)">
                                     </div>
 
                                     <div class="form-group my-2">
                                         <label for="tituloInput">Título da seção</label>
-                                        <input type="text" class="form-control" id="tituloInput" placeholder="Digite seu título aqui" name="titulo" value="{{$fields->titulo}}">
+                                        <input type="text" class="form-control" id="tituloInput" placeholder="Digite seu título aqui" name="titulo" value="{{$fields->titulo}}" onfocus="focusText(this)" onfocusout="autosaveText(this)">
                                     </div>
 
                                     <div class="form-group my-2">
                                         <label for="subtituloInput">Subtítulo</label>
-                                        <input type="text" class="form-control" id="subtituloInput" placeholder="Adicione aqui um complemento aos títulos" name="subtitulo" value="{{$fields->subtitulo}}">
+                                        <input type="text" class="form-control" id="subtituloInput" placeholder="Adicione aqui um complemento aos títulos" name="subtitulo" value="{{$fields->subtitulo}}" onfocus="focusText(this)" onfocusout="autosaveText(this)">
                                     </div>
 
                                     <div class="form-group my-2">
                                         <label for="textoPrincipalInput">Texto principal</label>
-                                        <input type="text" class="form-control" id="textoPrincipalInput" placeholder="Insira aqui aquilo que julgar mais importante" name="textoPrincipal" value="{{$fields->textoPrincipal}}">
+                                        <input type="text" class="form-control" id="textoPrincipalInput" placeholder="Insira aqui aquilo que julgar mais importante" name="textoPrincipal" value="{{$fields->textoPrincipal}}" onfocus="focusText(this)" onfocusout="autosaveText(this)">
                                     </div>
 
                                     <div class="form-group my-2">
                                         <label for="imgPrincipalInput">Imagem Principal</label>
-                                        <input type="file" class="form-control-file" id="imgPrincipalInput" name="imgPrincipal">
+                                        <input type="file" class="form-control-file" id="imgPrincipalInput" name="imgPrincipal" accept="image/jpg, image/png, image/jpeg" onchange="imgUpload(this)">
+                                        <div class='preview'>
+                                            <img src="" id="imgPrincipalPreview" width="300" height="200">
+                                        </div>
                                     </div>
 
                                 </div>
@@ -63,12 +67,12 @@
                                 <div class="col-md-6 col-lg-4 mx-auto">
                                     <div class="form-group my-2">
                                         <label for="textoBotaoInput">Texto do botão principal</label>
-                                        <input type="text" class="form-control" id="textoBotaoInput" placeholder='Algo do tipo "Saiba mais" e "Confira agora"' name="textoBotao" value="{{$fields->textoBotao}}">
+                                        <input type="text" class="form-control" id="textoBotaoInput" placeholder='Algo do tipo "Saiba mais" e "Confira agora"' name="textoBotao" value="{{$fields->textoBotao}}" onfocus="focusText(this)" onfocusout="autosaveText(this)">
                                     </div>
 
                                     <div class="form-group my-2">
                                         <label for="linkBotaoInput">Link do botão principal</label>
-                                        <input type="text" class="form-control" id="linkBotaoInput" placeholder="Para que outro site você deseja levar seu cliente?" name="linkBotao" value="{{$fields->linkBotao}}">
+                                        <input type="text" class="form-control" id="linkBotaoInput" placeholder="Para que outro site você deseja levar seu cliente?" name="linkBotao" value="{{$fields->linkBotao}}" onfocus="focusText(this)" onfocusout="autosaveText(this)">
                                     </div>
 
                                     <div class="form-group my-2">
@@ -121,27 +125,24 @@
 
                                     <div class="form-group my-2">
                                         <label for="textoCardInput">Texto do card principal</label>
-                                        <input type="text" class="form-control" id="textoCardInput" placeholder="Pense como se fosse uma legenda" name="textoCard" value="{{$fields->textoCard}}">
+                                        <input type="text" class="form-control" id="textoCardInput" placeholder="Pense como se fosse uma legenda" name="textoCard" value="{{$fields->textoCard}}" onfocus="focusText(this)" onfocusout="autosaveText(this)">
                                     </div>
 
                                     <div class="form-group my-2">
                                         <label for="imgCardInput">Imagem do card principal</label>
-                                        <input type="file" class="form-control-file" id="imgCardInput" name="imgCard">
+                                        <input type="file" class="form-control-file" id="imgCardInput" name="imgCard" accept="image/jpg, image/png, image/jpeg" onchange="imgUpload(this)">
+                                        <div class='preview'>
+                                            <img src="" id="imgCardPreview" width="300" height="200">
+                                        </div>
                                     </div>
 
                                 </div>
                             </div>
                         </form>
 
-                        <div class="form-group d-flex justify-content-end mt-3">
-                            <input class="btn btn-success mx-1" type="submit" value="Salvar" form="edit-form"></input>
-                            <a href="/" class="btn btn-danger mx-1" form="edit-form">Cancelar</a>
-                        </div>
-
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
