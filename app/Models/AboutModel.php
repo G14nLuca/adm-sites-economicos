@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class AboutSection extends Model
+class AboutModel extends Model
 {
     use HasFactory;
 
@@ -16,4 +16,5 @@ class AboutSection extends Model
      */
     protected $table = 'about_sections';
     public $timestamps = false;
+    protected $primaryKey = 'id';
 }
