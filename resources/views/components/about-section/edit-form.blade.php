@@ -58,7 +58,7 @@
                                         <label for="imgPrincipalInput">Imagem Principal</label>
                                         <input type="file" class="form-control-file" id="imgPrincipalInput" name="imgPrincipal" accept="image/jpg, image/png, image/jpeg" onchange="imgUpload(this)">
                                         <div class='preview'>
-                                            <img src="" id="imgPrincipalPreview" width="300" height="200">
+                                            <img src="{{ asset('storage/img/main/'.$fields->imgPrincipal) }}" id="imgPrincipalPreview" height="200">
                                         </div>
                                     </div>
 
@@ -132,7 +132,7 @@
                                         <label for="imgCardInput">Imagem do card principal</label>
                                         <input type="file" class="form-control-file" id="imgCardInput" name="imgCard" accept="image/jpg, image/png, image/jpeg" onchange="imgUpload(this)">
                                         <div class='preview'>
-                                            <img src="" id="imgCardPreview" width="300" height="200">
+                                            <img src="{{ asset('storage/img/main/'.$fields->imgCard) }}" id="imgCardPreview" width="200">
                                         </div>
                                     </div>
 

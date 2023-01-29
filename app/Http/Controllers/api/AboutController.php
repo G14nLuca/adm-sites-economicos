@@ -53,7 +53,7 @@ class AboutController extends Controller
                 $novoNome = Storage::disk('local')->put('public/img/card', $img, 'public');
             }
 
-            return  basename($novoNome);
+            return basename($novoNome);
         }
     }
 }

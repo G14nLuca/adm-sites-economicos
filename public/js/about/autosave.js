@@ -1,4 +1,4 @@
-function focusText(element){
+function focusText(element) {
     element.style.borderColor = '#131147';
 }
 
@@ -32,8 +32,6 @@ function imgUpload(element) {
 
     var img = $(element)[0].files[0];
     var tipoImg = $(element).attr('name');
-
-    console.log(img + '\n' + tipoImg);
 
     if (img) {
 
