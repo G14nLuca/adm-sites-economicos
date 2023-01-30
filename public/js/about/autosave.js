@@ -35,17 +35,30 @@ function imgUpload(element) {
 
     if (img) {
 
+        //mostrando preview da imagem na página
+        var reader = new FileReader();
+        
+        reader.onload = (e) => {
+            $(element).next().children().attr("src", e.target.result);
+        };
+
+        reader.readAsDataURL(img);
+        
+
+        //criando formData com os dados a serem enviados pela requisição
         var formData = new FormData();
         formData.append('id', 1);
         formData.append('img', img);
         formData.append('tipoImg', tipoImg);
 
+        //adicionando token CSRF à requisição
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
 
+        //requisição HTTP POST
         $.ajax({
             type: 'POST',
             url: '/update/img',
