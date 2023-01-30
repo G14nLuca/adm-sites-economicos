@@ -1,4 +1,4 @@
-function focusText(element){
+function focusText(element) {
     element.style.border = '3px solid black';
 }
 
@@ -25,6 +25,29 @@ function autosaveText(element) {
         }
     });
 
+}
+
+function autosaveRadio() {
+
+    //resgatando valor escolhido pelo usuário
+    var radioValue = $('input[name="corBotao"]:checked').val();
+
+    //adicionando token CSRF à requisição
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $.ajax({
+        type: 'POST',
+        url: 'update/text',
+        data: {
+            id: 1,
+            nome: "corBotao",
+            valor: radioValue
+        }
+    });
 }
 
 function imgUpload(element) {

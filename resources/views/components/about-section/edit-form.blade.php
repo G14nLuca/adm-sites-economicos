@@ -77,46 +77,46 @@
 
                                     <div class="form-group my-2">
                                         <label class="form-label">Cor de fundo do card</label>
-                                        <div class="row gutters-xs">
+                                        <div class="row gutters-xs btn-group" onchange="autosaveRadio()">
                                             <div class="col-auto">
                                                 <label class="colorinput">
-                                                    <input name="corBotao" type="radio" value="bg-dark" class="colorinput-input">
+                                                    <input name="corBotao" type="radio" value="bg-dark" {{ $fields->corBotao == "bg-dark" ? 'checked' : '' }} class="colorinput-input">
                                                     <span class="colorinput-color bg-dark"></span>
                                                 </label>
                                             </div>
                                             <div class="col-auto">
                                                 <label class="colorinput">
-                                                    <input name="corBotao" type="radio" value="bg-primary" class="colorinput-input">
+                                                    <input name="corBotao" type="radio" value="bg-primary" {{ $fields->corBotao == "bg-primary" ? 'checked' : '' }} class="colorinput-input">
                                                     <span class="colorinput-color bg-primary"></span>
                                                 </label>
                                             </div>
                                             <div class="col-auto">
                                                 <label class="colorinput">
-                                                    <input name="corBotao" type="radio" value="bg-secondary" class="colorinput-input">
+                                                    <input name="corBotao" type="radio" value="bg-secondary" {{ $fields->corBotao == "bg-secondary" ? 'checked' : '' }} class="colorinput-input">
                                                     <span class="colorinput-color bg-secondary"></span>
                                                 </label>
                                             </div>
                                             <div class="col-auto">
                                                 <label class="colorinput">
-                                                    <input name="corBotao" type="radio" value="bg-info" class="colorinput-input">
+                                                    <input name="corBotao" type="radio" value="bg-info" {{ $fields->corBotao == "bg-info" ? 'checked' : '' }} class="colorinput-input">
                                                     <span class="colorinput-color bg-info"></span>
                                                 </label>
                                             </div>
                                             <div class="col-auto">
                                                 <label class="colorinput">
-                                                    <input name="corBotao" type="radio" value="bg-success" class="colorinput-input">
+                                                    <input name="corBotao" type="radio" value="bg-success" {{ $fields->corBotao == "bg-success" ? 'checked' : '' }} class="colorinput-input">
                                                     <span class="colorinput-color bg-success"></span>
                                                 </label>
                                             </div>
                                             <div class="col-auto">
                                                 <label class="colorinput">
-                                                    <input name="corBotao" type="radio" value="bg-danger" class="colorinput-input">
+                                                    <input name="corBotao" type="radio" value="bg-danger" {{ $fields->corBotao == "bg-danger" ? 'checked' : '' }} class="colorinput-input">
                                                     <span class="colorinput-color bg-danger"></span>
                                                 </label>
                                             </div>
                                             <div class="col-auto">
                                                 <label class="colorinput">
-                                                    <input name="corBotao" type="radio" value="bg-warning" class="colorinput-input">
+                                                    <input name="corBotao" type="radio" value="bg-warning" {{ $fields->corBotao == "bg-warning" ? 'checked' : '' }} class="colorinput-input">
                                                     <span class="colorinput-color bg-warning"></span>
                                                 </label>
                                             </div>
