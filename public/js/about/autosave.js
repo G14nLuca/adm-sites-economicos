@@ -1,7 +1,3 @@
-function focusText(element) {
-    element.style.borderColor = '#131147';
-}
-
 function autosaveText(element) {
     $.ajaxSetup({
         headers: {
@@ -22,7 +18,6 @@ function autosaveText(element) {
         },
         error: function (data) {
             element.style.borderColor = 'red';
-            alert("Ocorreu um erro ao salvar suas alterações. Tente novamente.")
         }
     });
 
@@ -34,16 +29,6 @@ function imgUpload(element) {
     var tipoImg = $(element).attr('name');
 
     if (img) {
-
-        //mostrando preview da imagem na página
-        var reader = new FileReader();
-        
-        reader.onload = (e) => {
-            $(element).next().children().attr("src", e.target.result);
-        };
-
-        reader.readAsDataURL(img);
-        
 
         //criando formData com os dados a serem enviados pela requisição
         var formData = new FormData();
@@ -66,12 +51,20 @@ function imgUpload(element) {
             cache: false,
             contentType: false,
             processData: false,
-            success: function (data) {
-                element.parentElement.style.border = '1px solid green';
+            success: function () {
+
+                var preview = $(element).next().children();
+
+                var reader = new FileReader();
+                reader.onload = (e) => {
+                    preview.attr("src", e.target.result);
+                };
+
+                reader.readAsDataURL(img);
+
             },
             error: function () {
-                element.parentElement.style.border = '1px solid red';
-                alert("Ocorreu um erro ao enviar a imagem. Tente novamente.")
+                alert("Ocorreu um erro. Tente novamente.")
             }
         });
     }

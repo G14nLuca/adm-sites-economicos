@@ -132,7 +132,7 @@
                                         <label for="imgCardInput">Imagem do card principal</label>
                                         <input type="file" class="form-control-file" id="imgCardInput" name="imgCard" accept="image/jpg, image/png, image/jpeg" onchange="imgUpload(this)">
                                         <div class='preview'>
-                                            <img src="{{ asset('storage/img/main/'.$fields->imgCard) }}" id="imgCardPreview" width="200">
+                                            <img src="{{ asset('storage/img/card/'.$fields->imgCard) }}" id="imgCardPreview" width="200">
                                         </div>
                                     </div>
 
