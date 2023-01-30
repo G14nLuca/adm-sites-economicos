@@ -1,3 +1,7 @@
+function focusText(element){
+    element.style.border = '3px solid black';
+}
+
 function autosaveText(element) {
     $.ajaxSetup({
         headers: {
