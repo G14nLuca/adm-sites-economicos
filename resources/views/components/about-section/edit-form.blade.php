@@ -57,8 +57,8 @@
                                     <div class="form-group my-2">
                                         <label for="imgPrincipalInput">Imagem Principal</label>
                                         <input type="file" class="form-control-file" id="imgPrincipalInput" name="imgPrincipal" accept="image/jpg, image/png, image/jpeg" onchange="imgUpload(this)">
-                                        <div class='preview'>
-                                            <img src="{{ asset('storage/img/main/'.$fields->imgPrincipal) }}" id="imgPrincipalPreview" height="200">
+                                        <div class='preview mt-3'>
+                                            <img src="{{ asset('storage/img/main/'.$fields->imgPrincipal) }}" id="imgPrincipalPreview" height="250">
                                         </div>
                                     </div>
 
@@ -131,7 +131,7 @@
                                     <div class="form-group my-2">
                                         <label for="imgCardInput">Imagem do card principal</label>
                                         <input type="file" class="form-control-file" id="imgCardInput" name="imgCard" accept="image/jpg, image/png, image/jpeg" onchange="imgUpload(this)">
-                                        <div class='preview'>
+                                        <div class='preview mt-3'>
                                             <img src="{{ asset('storage/img/card/'.$fields->imgCard) }}" id="imgCardPreview" width="200">
                                         </div>
                                     </div>
