@@ -10,11 +10,17 @@ class AboutModel extends Model
     use HasFactory;
 
     /**
-     * The table associated with the model.
-     *
-     * @var string
+     * Indicar a tabela do banco de dados correspondente
      */
     protected $table = 'about_sections';
+
+    /**
+     * Indicar a presença, ou não, de timestamps
+     */
     public $timestamps = false;
+
+    /**
+     * Indicar a chave primária da tabela
+     */
     protected $primaryKey = 'id';
 }

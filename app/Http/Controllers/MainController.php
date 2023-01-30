@@ -7,8 +7,12 @@ use PhpOption\None;
 
 class MainController extends Controller
 {
-    public function index(){
 
+    /*
+    * Retornar página principal da aplicação
+    */
+    public function index()
+    {
         return view('main', ['view' => 'empty']);
     }
 }
